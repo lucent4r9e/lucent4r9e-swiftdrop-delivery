@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f45b35" />
+  <meta name="description" content="Order meals and treats for delivery in Ilorin with SwiftDrop." />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+  <title>SwiftDrop — Good food, delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="topline"><span>Fresh meals, right to your door</span><span>Serving Ilorin and nearby areas</span></div>
+  <header class="header wrap">
+    <a class="brand" href="#home" aria-label="SwiftDrop home"><span class="brand-mark">S</span><span>swift<span class="brand-accent">drop</span><small>GOOD FOOD. GOOD MOOD.</small></span></a>
+    <nav><a href="#menu">Explore menu</a><a href="#how">How it works</a></nav>
+    <button class="cart-button" id="openCart">Your cart <span id="cartCount">0</span></button>
+  </header>
+  <main id="home">
+    <section class="hero wrap">
+      <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR LOCAL FOOD PARTNER</div><h1>Good food.<br><span>Great mood.</span></h1><p>Your favourite meals and treats, delivered fresh to your doorstep without the stress.</p><div class="hero-actions"><a class="button primary" href="#menu">Order something good <span>↗</span></a><a class="text-link" href="#how">How it works <span>→</span></a></div><div class="hero-note"><span class="avatar-stack"><i>🍔</i><i>🍕</i><i>🍰</i></span><span><b>Good things are cooking.</b><small>Made fresh. Delivered with care.</small></span></div></div>
+      <div class="hero-art"><div class="hero-circle"></div><div class="hero-food">🍱</div><div class="floating-card card-top"><span class="float-icon">⚡</span><span><b>Quick delivery</b><small>From kitchen to you</small></span></div><div class="floating-card card-bottom"><span class="float-icon peach">♡</span><span><b>Made with care</b><small>Every single order</small></span></div><span class="spark spark-one">✳</span><span class="spark spark-two">✦</span></div>
+    </section>
+    <section class="benefits wrap"><div><span class="benefit-icon">🥬</span><span><b>Fresh picks</b><small>Quality you can taste</small></span></div><div><span class="benefit-icon">🛵</span><span><b>At your doorstep</b><small>Convenience, delivered</small></span></div><div><span class="benefit-icon">💛</span><span><b>Made for you</b><small>Every order matters</small></span></div></section>
+    <section class="menu-section wrap" id="menu"><div class="section-heading"><div><div class="eyebrow">THE GOOD STUFF</div><h2>What are you craving?</h2><p>Find your next favourite bite.</p></div><div class="menu-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search meals..." aria-label="Search meals"></div></div><div class="filters" id="filters"><button class="filter active" data-category="All">All items</button><button class="filter" data-category="Meals">Meals</button><button class="filter" data-category="Snacks">Snacks</button><button class="filter" data-category="Desserts">Desserts</button><button class="filter" data-category="Drinks">Drinks</button></div><div class="product-grid" id="productGrid"><div class="loading">Getting the good stuff ready…</div></div></section>
+    <section class="how-section" id="how"><div class="wrap"><div class="eyebrow">EASY AS ONE, TWO, THREE</div><h2>Good food is just a few taps away.</h2><div class="steps"><article><span>01</span><div class="step-icon">🧆</div><h3>Pick your favourites</h3><p>Explore the menu and add what you love to your cart.</p></article><article><span>02</span><div class="step-icon">📍</div><h3>Tell us where to go</h3><p>Enter your details and the address for your delivery.</p></article><article><span>03</span><div class="step-icon">🛵</div><h3>Get ready to enjoy</h3><p>We prepare your order and bring it right to you.</p></article></div></div></section>
+    <section class="track-section wrap"><div><div class="eyebrow">ALREADY ORDERED?</div><h2>Your order, your peace of mind.</h2><p>Enter your tracking code to check the latest status of your delivery.</p></div><form id="trackForm" class="track-form"><input id="trackingCode" placeholder="e.g. A1B2C3D4" aria-label="Tracking code" required maxlength="12"><button class="button dark" type="submit">Track order →</button><p id="trackResult" class="form-message"></p></form></section>
+  </main>
+  <footer><div class="wrap footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark">S</span><span>swift<span class="brand-accent">drop</span><small>GOOD FOOD. GOOD MOOD.</small></span></a><span>Made with care in Ilorin. © <span id="year"></span> SwiftDrop.</span><a href="#menu">Back to menu ↑</a></div></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Your cart" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow">YOUR ORDER</span><h2>Your cart <span id="drawerCount">(0)</span></h2></div><button class="icon-button" id="closeCart" aria-label="Close cart">×</button></div><div id="cartItems" class="cart-items"><div class="empty-cart">🛍️<b>Your cart is taking a little nap.</b><span>Add something delicious to wake it up.</span></div></div><div class="drawer-bottom"><div class="subtotal"><span>Subtotal</span><b id="subtotal">₦0</b></div><small>Delivery fee, if any, will be confirmed by the shop.</small><button class="button primary full" id="checkoutButton">Continue to checkout <span>→</span></button></div></aside>
+  <div class="modal-wrap" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"><div class="checkout-modal"><button class="icon-button modal-close" id="closeCheckout" aria-label="Close checkout">×</button><div class="eyebrow">ALMOST THERE</div><h2 id="checkoutTitle">Where should we deliver?</h2><p class="modal-intro">Fill in your details so we can get your order to you.</p><form id="checkoutForm" class="checkout-form"><label>Full name<input name="customerName" required maxlength="120" placeholder="Your name"></label><label>Phone number<input name="phone" type="tel" required maxlength="40" placeholder="080..." ></label><label>Delivery address<textarea name="address" required maxlength="1000" placeholder="House number, street, area, Ilorin"></textarea></label><label>Order notes <span class="optional">(optional)</span><input name="notes" maxlength="500" placeholder="Gate colour, directions, etc."></label><fieldset><legend>Payment method</legend><label class="payment-choice"><input type="radio" name="paymentMethod" value="delivery" checked><span><b>Pay on delivery</b><small>Pay when your order arrives</small></span></label><label class="payment-choice"><input type="radio" name="paymentMethod" value="online"><span><b>Pay online</b><small>Secure payment link, when enabled</small></span></label></fieldset><div class="checkout-total"><span>Total</span><b id="checkoutTotal">₦0</b></div><button class="button primary full" type="submit" id="placeOrder">Place my order <span>→</span></button><p id="checkoutMessage" class="form-message"></p></form></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+  <script src="/pwa.js" defer></script>
+</body>
+</html>
